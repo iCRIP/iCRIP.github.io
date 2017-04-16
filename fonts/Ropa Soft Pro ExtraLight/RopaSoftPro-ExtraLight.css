@@ -1,0 +1,12 @@
+/* Webfont: RopaSoftPro-ExtraLight */@font-face {
+    font-family: 'RopaSoftProExtraLight';
+    src: url('RopaSoftPro-ExtraLight.eot'); /* IE9 Compat Modes */
+    src: url('RopaSoftPro-ExtraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('RopaSoftPro-ExtraLight.woff') format('woff'), /* Modern Browsers */
+         url('RopaSoftPro-ExtraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('RopaSoftPro-ExtraLight.svg#RopaSoftPro-ExtraLight') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

@@ -1,0 +1,546 @@
+/* Webfont: RopaSoftPro-Regular */@font-face {
+    font-family: 'RopaSoftPro';
+    src: url('../fonts/Ropa Soft Pro/RopaSoftPro-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Ropa Soft Pro/RopaSoftPro-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Ropa Soft Pro/RopaSoftPro-Regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Ropa Soft Pro/RopaSoftPro-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Ropa Soft Pro/RopaSoftPro-Regular.svg#RopaSoftPro-Regular') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+/* Webfont: RopaSoftPro-ExtraLight */@font-face {
+    font-family: 'RopaSoftPro';
+    src: url('../fonts/Ropa Soft Pro ExtraLight/RopaSoftPro-ExtraLight.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Ropa Soft Pro ExtraLight/RopaSoftPro-ExtraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Ropa Soft Pro ExtraLight/RopaSoftPro-ExtraLight.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Ropa Soft Pro ExtraLight/RopaSoftPro-ExtraLight.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Ropa Soft Pro ExtraLight/RopaSoftPro-ExtraLight.svg#RopaSoftPro-ExtraLight') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: 200;
+    text-rendering: optimizeLegibility;
+}
+/* Webfont: RopaSoftPro-Light */@font-face {
+    font-family: 'RopaSoftPro';
+    src: url('../fonts/Ropa Soft Pro Light/RopaSoftPro-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Ropa Soft Pro Light/RopaSoftPro-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Ropa Soft Pro Light/RopaSoftPro-Light.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Ropa Soft Pro Light/RopaSoftPro-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Ropa Soft Pro Light/RopaSoftPro-Light.svg#RopaSoftPro-Light') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+}
+
+ 
+
+*{
+  box-sizing: border-box;
+}
+body{
+  margin:0;
+  padding: 0;
+  font-family: 'RopaSoftPro';
+}
+input, textarea, select, button {
+  font-family: 'RopaSoftPro';
+}
+.container {
+  width: 990px;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 0 10px;
+  overflow: hidden;
+}
+.fade-in{
+  transition: opacity .3s;
+  opacity: 0;
+
+}
+.fade-in.start{
+  opacity: 1;
+}
+.top {
+  display:flex;
+  justify-content:center;
+  margin-top: 85px;
+}
+
+.top-logo {
+  position:relative;
+}
+.top-logo a{ display: block; }
+.top-logo img{position: relative;left:-2px;}
+
+.top-cta {
+  position:absolute;
+  left:100%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 280px;
+  top:0;
+  align-items:center;
+  margin-left: 49px;
+  margin-top: 20px;
+  height: 0;
+}
+.top-cta.start{
+  height: auto;
+  display: flex;
+}
+.top-cta.start .top-cta-dot.xs{
+    transform: scale(1);
+    opacity: .6;
+}
+.top-cta.start .top-cta-dot.sm{
+  transform: scale(1);
+  opacity: .8;
+}
+.top-cta.start .top-cta-dot.md{
+  transform: scale(1);
+  opacity: 1;
+}
+.top-cta.start .btn-cta.btn{
+  
+  transform: scaleX(1);
+  
+  opacity: 1;
+}
+.top-cta-dot{
+  background-color: #ff830f;
+  border-radius: 100%;
+  opacity: 0;
+  transform: scale(0);
+}
+.top-cta-dot.xs {
+  transition: .5s all 0s;
+  width:6px;
+  height:6px;
+}
+
+.top-cta-dot.sm {
+  width:8px;
+  height:8px;
+  margin-left:14px;
+  transition:.5s all .4s;
+}
+
+.top-cta-dot.md {
+  transition: .5s all .8s;
+  width: 12px;
+  height: 12px;
+  margin-left: 13px;
+  margin-right: 9px;
+}
+ 
+.btn-cta.btn {
+  transition: 1s all 1s, .5s background-color 0s;
+  background-color: #ff830f;
+  display: inline-block;
+  border-radius:  5px;
+  border: none;
+  padding: 6px 21px 5px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 300;
+  transform: scaleX(0);
+  opacity: 0;
+  transform-origin: left;
+}
+.btn-cta.btn:hover{
+  background-color: #e85f11;
+}
+.btn{
+  cursor: pointer;
+
+}
+.btn:focus{
+  outline:#ff830f ;
+}
+.lettering {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-top: 47px;
+}
+
+.lettering-item {
+    position: relative;}
+.lettering-item-1 {
+    left: -5px;}
+.lettering-item-2 {
+    top: 5px;
+    left: 4px;}
+.lettering-item-3 {
+    left: 7px;}
+.lettering-item-4 {
+    top: -8px;}
+.lettering-item-5 {
+    margin-right: 19px;
+    top: -23px;
+    left: -2px;}
+.lettering-item-6 {
+    top: -21px;}
+.lettering-item-7 {
+    margin-top: -60px;
+    left: 25px;
+    top: -3px;}
+.lettering-item-8 {
+    height: 117px;
+    top: -91px;
+    left: 17px;}
+
+
+.lettering-item-2 {
+    transform: translateX(200px);
+  transition: transform .5s;
+  
+}
+.lettering-item-2.start{
+    transform: translateX(0px);
+}
+.lettering-item-3 {
+    transform-origin: left bottom;
+    transform: rotate3d(0, 0, 1, -45deg);
+    transition: transform .5s;
+}
+.lettering-item-3.start{
+    transform: rotate3d(0, 0, 1, 0deg);
+}
+.lettering-item-4 {
+  transition: transform .5s;
+  transform: translate3d(0, -3000px, 0);
+
+}
+.lettering-item-4.start{
+  animation-duration: 1s;
+  animation-name: bounceInDown;
+  animation-play-state: running;
+  transform: translate3d(0, 0px, 0);
+}
+.lettering-item-6 {
+    transform-origin: left bottom;
+    transform: rotate3d(0, 0, 1, 90deg);
+}
+.lettering-item-6.start {
+    transform: rotate3d(0, 0, 1, 0deg);
+  transition: transform .5s;
+}
+
+.lettering-item-8.start {
+  animation-duration: 2s;
+  animation-name: rollIn;
+  animation-play-state: running;
+}
+.portfolio-goto {
+    text-align: center;
+    margin-top: 65px;
+}
+
+.portfolio-link {
+    display: inline-block;
+}
+
+.cf {
+    
+    transform: translate3d(0, 300px, 0);
+}
+
+.cf-block {
+    width: 420px;
+    margin: 0 auto;
+}
+.cf-block.not-filled .cf-btn.btn.btn-cf{
+  opacity: 0;
+}
+.cf-title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cf-row {
+    width: 300px;
+    margin: 0 auto;;
+}
+
+.cf-input {
+    border: 1px solid #8e9194;
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 1;
+    padding: 8px 13px 7px;
+    width: 100%;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #cd5916;
+}
+.cf-input.filled{
+  outline: 1px solid #ff830f ;
+}
+.cf-input:focus{
+  outline: 1px solid #ff830f ;
+}
+.cf-btn.btn.btn-cf {
+    background-color: #ff830f;
+    color: #fff;
+    border: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 13px 5px;
+    line-height: 1;
+    margin-top: 22px;
+    transition:  .3s;
+}
+.cf-dots{
+  text-align: center;
+  margin-top: 50px;
+}
+.cf-dot{
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #8e9194;
+  border-radius: 50%;
+  margin:  0 8px; 
+  cursor: pointer;
+}
+
+.cf-dot.active{
+  background-color: #8e9194;
+}
+.cf-dot.filled{
+  background-color: #ff830f;
+  border-color: #ff830f;
+}
+.cf-dot-cross{
+  border: none;
+}
+.cf-dot-cross:before{
+  content:  '+';
+  font-family: '';
+  font-size: 29px; 
+  transform: rotate(45deg);
+  display: inline-block;
+  color: #ff830f;
+}
+.goAway.lettering{
+  animation-delay: .3s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: bounceOutDown;
+  animation-play-state: running;
+}
+.goAway.portfolio-goto{
+  
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: bounceOutDown;
+  animation-play-state: running;
+}
+.top-cta.goAway{
+  transition: .5s ;
+  opacity: 0;
+}
+.cf.getOverHere{
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: bounceInDowncf;
+  animation-play-state: running;
+}
+
+.cf-dots.getOverHere{
+  animation-delay: 1.3s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: bounceInDowncf;
+  animation-play-state: running;
+}
+.getOverHere.lettering{
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: bounceInUp;
+  animation-play-state: running;
+  transform: translate3d(0, 3000px, 0);
+}
+.getOverHere.portfolio-goto{
+  animation-delay: 1.3s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: bounceInUp;
+  animation-play-state: running;
+  transform: translate3d(0, 3000px, 0);
+}
+.top-cta.getOverHere{
+  transition: .5s ;
+  opacity: 1;
+}
+.cf.goAway{
+  animation-delay: 0s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: bounceOutDownCf;
+  animation-play-state: running;
+  transform: translate3d(0, -515px, 0);
+}
+
+.cf-dots.goAway{
+  animation-delay: .3s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-name: bounceOutDownCf;
+  animation-play-state: running;
+  transform: translate3d(0, -515px, 0);
+}
+@keyframes rollIn {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    transform: translate3d(300px, 0, 0) scale(.1);
+  }
+
+  30% {
+    transform: translate3d(-20px, 0, 0) scale(.25) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(0px, 0, 0) scale(.5) rotate(45deg);
+  }
+
+  55% {
+    transform: translate3d(0px, 0, 0) scale(1) rotate(-360deg);
+  }
+
+  90% {
+    transform: translate3d(-0px, 0, 0) scale(1) rotate(0deg);
+  }
+
+  to {
+    transform: none;
+  }
+}
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -10px, 0);
+  }
+
+  90% {
+    transform: translate3d(0, 5px, 0);
+  }
+
+  to {
+    transform: none;
+  }
+}
+@keyframes bounceInDowncf {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 300px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -535px, 0);
+  }
+
+  75% {
+    transform: translate3d(0, -505px, 0);
+  }
+
+  90% {
+    transform: translate3d(0,-510px, 0);
+  }
+
+  to {
+    transform: translate3d(0, -515px, 0);
+  }
+}
+
+
+@keyframes bounceOutDown {
+  20% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  40%, 45% {
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 2000px, 0);
+    transform: translate3d(0, 2000px, 0);
+  }
+}
+@keyframes bounceOutDownCf {
+  20% {
+    transform: translate3d(0, -505px, 0);
+  }
+
+  40%, 45% {
+    transform: translate3d(0, -535px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 300px, 0);
+  }
+}
