@@ -1,0 +1,1082 @@
+@import  _anim 
+
+
+body
+  font-family: 'Source Sans Pro'
+  margin: 0
+  padding: 0 
+.container
+  margin: 0 10%
+.si
+  &_container
+    margin: 0 auto
+  &_wrap
+    padding: 40px 0
+  &_frame
+    display: flex
+    position: relative
+  &_icon
+    width: 25%
+    position: relative
+    border: 1px solid #fff
+    box-sizing: border-box
+    &_trans
+      transition: .4s
+    &_title
+      color: #ffffff
+      font-weight: bold
+      letter-spacing: .3px
+      text-align: center
+      font-size: 15px
+      position: absolute
+      bottom: 20px
+      left: 0
+      right: 0
+    svg 
+      max-width: 100%
+      height: auto
+      display: block
+      overflow: hidden
+      position: relative
+    &_bg
+      fill: #dbdbdb
+      transition: 1s
+    
+    &_anim
+      background-image: url(../img/rain_drop.svg)
+      opacity: 0
+      background-size: 100% 100%
+      position: absolute
+      right: 0
+      bottom: 0 
+      top: 0
+      left: 0
+      transform: translate(58%, -108%) 
+      &--clone
+        background-image: url(../img/rain_drop.svg)
+        background-size: 100% 100%
+        opacity: 0
+        position: absolute
+        right: 0
+        bottom: 0
+        top: 0
+        left: 0
+    &_me
+      *
+        fill: #fff
+    &_trans
+      fill: #dbdbdb 
+    &#home
+      .line 
+        opacity: 0
+        transition: .4s
+      .si_icon_me 
+        transform: translateX(100px) scale(.9)
+        transition: .4s
+        .si_icon_bg
+          fill: #dbdbdb
+      .clouds
+        
+        transition: .4s
+        transform-origin: top left
+        transform: scale(.5) translate(-50%, 0)
+        *
+          fill: #dbdbdb
+    &.active
+      .si_icon_bg
+      .si_icon_me
+        path
+          fill: #fff
+          transition: 1s
+        
+      .si_icon_anim
+        opacity: 1
+        transition: 1s opacity 
+        transform: translate(0%, 0%)  
+        &--clone
+          opacity: 1
+          transition: 1s opacity 1s
+      
+      &#rain
+        .si_icon_anim
+          opacity: 1
+          position: absolute
+          left: 0
+          right: 0
+          bottom: 0
+          top: 0
+          animation-name: rain_anim
+          animation-duration: 3s 
+          animation-delay: .4s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+        .si_icon_anim--clone
+          opacity: 1
+          position: absolute
+          left: 0
+          right: 0
+          bottom: 0
+          
+          top: 0
+          animation-name: rain_anim--clone
+          animation-duration: 3s 
+          animation-delay: .4s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+        
+        .si_icon_bg
+          fill: #79B242
+        .si_icon_trans
+          fill: #79B242
+        .si_icon_toggle
+          background-color: rgba(121, 178, 66, 0.75)
+      &#home
+        .line
+          opacity: 1
+        .si_icon_bg
+          fill: #8b87ff
+        .clouds
+          
+          transform: scale(1) translate(0, 0)
+          animation-name: clouds
+          animation-duration: 18s 
+          animation-delay: .9s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          *
+            fill: #fff
+        .si_icon_me
+          transform: scale(1) translate(0%, 0%)
+          *
+            fill: #fff
+          .si_icon_bg
+            fill: #8b87ff
+        .si_icon_toggle
+          background-color: rgba(139, 135, 255, 0.75)
+    &#boat
+      .si_icon_me
+        transform-origin: center
+        transform: rotate(0deg) translateY(0px)
+        transition: .4s
+      .si_icon_anim
+        transform-origin: left
+        transform: translate(0, 0)
+        opacity: 0
+        transition: .4s
+        &--clone
+          transform-origin: left
+          transform: translate(0, 0)
+          opacity: 0
+          transition: .4s all .4s
+          &-2
+            transform-origin: left
+            transform: translate(0, 0)
+            opacity: 0
+            transition: .4s all .8s
+      &.active
+        .si_icon_toggle
+          background-color: rgba(177, 149, 165, 0.75);
+        .si_icon_bg
+          fill: #B195A5
+        .si_icon_anim
+          animation-name: boat-waves
+          animation-duration: 2.5s 
+          animation-delay: .4s
+          animation-iteration-count: infinite
+          animation-timing-function: ease-in-out
+          &--clone
+            animation-name: boat-waves
+            animation-duration: 2.5s 
+            animation-delay: 1.9s
+            animation-iteration-count: infinite
+            animation-timing-function: ease-in-out
+            &-2
+              animation-name: boat-waves
+              animation-duration: 2.5s 
+              animation-delay: 2.9s
+              animation-iteration-count: infinite
+              animation-timing-function: ease-in-out
+    
+
+        .si_icon_me
+          *
+            fill: #fff
+        .si_icon_me
+          transform: rotate(3deg) translateY(5px)
+          animation-name: boat
+          animation-duration: 2.5s
+          animation-delay: .4s
+          animation-iteration-count: infinite
+          animation-timing-function: ease-in-out
+    &#work_veh
+      .si_icon_trans
+        fill: #dbdbdb
+      .si_icon_anim
+        transform-origin: right
+        transform: translate(0px, 0px) scale(1.1)
+        transition: .3s
+        opacity: 0
+        &-2
+          opacity: 0
+          transform-origin: top
+          transition: .3s
+      &.active
+        .si_icon_toggle
+          background-color: rgba(121, 178, 66, 0.75)
+        .si_icon_anim
+          opacity: 1
+          transform: translate(0px, 0px) scale(1)
+          &-2
+            opacity: .9
+            transform: scale(1.2) translate(-118%, 118%)  
+            animation-name: road-line
+            animation-duration: .8s 
+            animation-delay: 0s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+
+        .si_icon_bg
+          fill: #79B242
+        .si_icon_trans
+          fill: #79B242
+        .si_icon_me
+          transform: translate(0, 0)
+          animation-name: veh
+          animation-duration: 2s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: ease
+          &-unim
+            animation: none
+    &#plain
+      .si_icon_anim
+        transform: translate(-125%, -170%) scale(1.3)
+        transform-origin: top
+        &-2
+          
+          opacity: 0
+        &-3
+          opacity: 0
+
+      .si_icon_me
+        rect
+          fill: #fff
+      .si_icon_trans
+        *
+          fill: #dbdbdb
+      &.active
+        .si_icon_toggle
+          background-color: rgba(255, 203, 57, 0.75)
+        .si_icon_trans
+          *
+            fill: #FFCB39
+        .si_icon_bg
+          fill: #FFCB39
+        .si_icon_me
+          transform: translate(0, 0)
+          animation-name: veh
+          animation-duration: 2s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: ease
+          
+        .si_icon_anim
+          transform-origin: top
+          animation-name: plain-clouds
+          animation-duration: 2s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          &-3
+            transform: translate(-444%, 159%) scale(1.2)
+            transform-origin: top
+            animation-name: plain-clouds-3
+            animation-duration: 2s 
+            animation-delay: .7s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+            opacity: 1
+          &-2
+            opacity: 1
+            transform: translate(-432%, -156%) scale(1.2)
+            transform-origin: top
+            animation-name: plain-clouds-2
+            animation-duration: 2s 
+            animation-delay: 1.3s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+
+    &#veh
+      .si_icon_me
+        &-unim
+      .si_icon_anim
+        transform: translate(259%, 259%) scale(1.4)
+      &.active
+        .si_icon_toggle
+          background-color: rgba(114, 198, 239, 0.75) 
+        .si_icon_anim
+          transform: translate(259%, 259%) scale(1.4)
+          transform-origin: top
+          animation-name: road_line-2
+          animation-duration: .6s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+        .si_icon_bg
+          fill: #72C6EF
+        .si_icon_me
+          transform: translate(0, 0)
+          animation-name: veh
+          animation-duration: 2s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: ease
+          &-unim
+            transform: translate(0, 0)
+            animation: none
+    &#quadro
+      .si_icon_ill
+        transition: .4s
+        opacity: 0
+      &.active
+        .si_icon_toggle
+          background-color: rgba(177, 149, 165, 0.75);
+        .si_icon_anim
+          transform-origin: top
+          animation-name: smoke
+          animation-duration: 2s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          opacity: 0
+          &-2
+            opacity: 0
+            transform-origin: top
+            animation-name: smoke
+            animation-duration: 2s 
+            animation-delay: 1s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+
+        .si_icon_ill      
+          opacity: 1
+        .si_icon_bg
+          fill: #B195A5
+        .si_icon_me
+          transform-origin: top
+          animation-name: veh-short
+          animation-duration: .15s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          *
+            fill: #fff
+          &-unim
+            animation: none
+    &#umbrella
+      .si_icon_me
+        transform: translateX(65px)
+        transition: .3s
+        .si_icon_trans
+          fill: #dbdbdb
+        .si_icon_bg
+          fill: #dbdbdb
+      .si_icon_line
+        opacity: 0
+        transition: .4s
+        transform-origin: left
+        transform: scaleX(0)
+        .si_icon_anim
+          &--clone
+            transform: translate(22%, -108%)
+      &.active
+        .si_icon_toggle
+          background-color: rgba(121, 178, 66, 0.75)
+        .si_icon_anim
+          animation-name: rain_anim
+          animation-duration: 3s 
+          animation-delay: .9s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          &--clone
+            transform: translate(22%, -108%) 
+            animation-name: rain_anim--clone
+            animation-duration: 3s 
+            animation-delay: .9s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+        .si_icon_line
+          transform: scaleX(1)
+          opacity: 1
+        .si_icon_bg 
+          fill: #79B242
+        .si_icon_me
+
+          transform: translateX(0px)
+          .si_icon_bg
+            fill: #79B242
+          .si_icon_trans
+            fill: #79B242
+        
+
+    &#trailer
+      .si_icon_trans
+        fill: #dbdbdb
+      .si_icon_me
+        &-unim
+          animation: none
+
+      .si_icon_line
+        transform: translate(-330%, 276%) scale(1.3)
+        transform-origin: top
+      .si_icon_anim
+        transform: translate(-109%, 0) scale(1.1)
+        transform-origin: top
+        &-2
+          transform-origin: top 
+          transform: translate(-1468%, 20%) scale(1.8)
+      &.active
+        .si_icon_toggle
+          background-color: rgba(177, 149, 165, 0.75);
+        .si_icon_me
+          animation-name: veh
+          animation-duration: 1.6s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          &-unim
+            animation: none
+        .si_icon_bg
+          fill: #B195A5
+        .si_icon_trans
+          fill: #B195A5
+        .si_icon_line
+          animation-name: road_line-3
+          animation-duration: 1.4s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          
+        .si_icon_anim
+          animation-name: wood
+          animation-duration: 1.4s 
+          animation-delay: 0s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          
+          &-2
+            animation-name: wood-2 
+            animation-duration: 1.4s 
+            animation-delay: .9s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+
+    &#condo
+      .si_icon_line
+        opacity: 0
+        transition: .3s
+        transform: scaleX(0)
+        transform-origin: left
+      .si_icon_me
+        transform-origin: right center
+        transform: translateX(60px) scale(.85)
+        transition: .2s
+        .si_icon_bg
+          fill: #dbdbdb
+      .clouds
+        
+        transition: .4s
+        transform-origin: top left
+        transform: scale(.5) translate(-50%, 0)
+        *
+          fill: #dbdbdb
+      .si_icon_anim
+        &-2
+          opacity: 0
+        &-3
+          opacity: 0
+        &-4
+          opacity: 0
+      &.active
+        .clouds
+          
+          transform: scale(1) translate(0, 0)
+          animation-name: clouds
+          animation-duration: 18s 
+          animation-delay: .9s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          *
+            fill: #fff
+        .si_icon_line
+          transform: scaleX(1)
+          opacity: 1
+        .si_icon_bg
+          fill: #8b87ff
+        .si_icon_me      
+          transform: translateX(0px) scale(1)
+          .si_icon_bg
+            fill: #8b87ff
+          polygon
+            fill: #fff
+
+        .si_icon_toggle
+          background-color: rgba(139, 135, 255, 0.75)
+        .si_icon_anim
+          transform: translate(100%, 200%) scale(.8)
+          animation-name: clouds-2
+          animation-duration: 5s 
+          animation-delay: .4s
+          animation-iteration-count: infinite
+          animation-timing-function: linear
+          &-2
+            transform: scale(.9) translate(120%, 125%)
+            transform-origin: top
+            animation-name: clouds-3
+            animation-duration: 5s 
+            animation-delay: 2s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+          &-3
+            transform: scale(1) translate(50%, 240%)
+            opacity: 0
+            transform-origin: top
+            animation-name: clouds-4
+            animation-duration: 5s 
+            animation-delay: 4s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+          &-4
+            transform: scale(.8) translate(50%, 100%) 
+            opacity: 0
+            transform-origin: top
+            animation-name: clouds-5
+            animation-duration: 5s 
+            animation-delay: 6s
+            animation-iteration-count: infinite
+            animation-timing-function: linear
+
+    &s
+      width: 100%
+      display: flex
+      flex-wrap: wrap
+    &_toggle
+      display: none
+      transition: .4s
+      opacity: 0
+      position: absolute
+      top: 20px
+      width: 90px
+      height: 30px
+      background-color: rgba(83, 83, 83, 0.5)
+      color: #ffffff
+      text-transform: uppercase
+      font-weight: 400
+      z-index: 2
+      cursor: pointer
+      left: 50%
+      margin-left: -45px
+      text-align: center
+      line-height: 29px
+      border: 1px solid rgba(255, 255, 255, 0.8)
+    &:hover
+      .si_icon_toggle
+        opacity: 1
+    &.active
+      .si_icon_toggle
+        
+  &_icons.selected
+    .si_icon_toggle
+      display: block
+      
+  &_modal
+    box-sizing: border-box
+    background-color: #fff
+    box-shadow: 0 0 25px 2px #5a5a5a
+    position: absolute
+    width: 52%
+    left: 50%
+    top: 50%
+    transform: translateY(-50%)
+    margin-left: -26%
+    height: 34%
+    min-height: 200px
+    text-align: center 
+    padding: 10px
+    z-index: 2
+    text-transform: uppercase
+    transition: .2s
+    &.purp
+      background-color: #8b87ff
+    &.green
+      background-color: #7bb31a
+    &.blue
+      background-color: #72C6EF
+    &.yellow
+      background-color: #ffcb39
+    &.red
+      background-color: #B195A5
+    &.white
+      background-color: #fff
+    &_title
+      font-size: 18px
+      font-weight: 600
+      letter-spacing: .5px
+      margin: 10px 0 15px
+      color: #fff
+      span
+        font-weight: 900
+      
+  &_title
+    font-size: 24px
+    font-weight: bold
+    text-align: center
+    margin-bottom: 20px
+    font-weight: bold
+    text-transform: uppercase
+    letter-spacing: 1px
+    span
+      font-size: 28px
+  &_qu
+    position: absolute
+    opacity: 0
+    left: 0
+    right: 0
+    top: 0
+    transition: .2s
+    z-index: -1
+    height: 0px
+    &.active
+      z-index: 2
+      height: auto
+    &_cta
+      
+      &_title
+        font-size: 20px
+        font-weight: 400
+        // margin-top: 20px
+        font-weight: bold
+    &_btn
+      background-color: #ff9900
+      color: #fff
+      font-size: 20px
+      font-weight: 300
+      letter-spacing: .5px 
+      border: none
+      padding: 20px 50px
+      // margin: 20px 0 10px
+    &_ans
+      font-size: 16px
+      flex-grow: 1
+      width: 24%
+      border: 1px solid #fff
+      padding: 10px 0
+      cursor: pointer
+      font-weight: 600
+      color: #fff
+      border-right-width: 0px
+      position: relative
+      &:last-of-type
+        border-right-width: 1px
+      &.purp
+        background-color: #8b87ff
+        // border-color: #8484BF
+      &.green
+        background-color: #7bb31a
+        // border-color: #7bb31a
+      &.blue
+        background-color: #72C6EF
+        // border-color: #72C6EF
+      &.yellow
+        background-color: #ffcb39
+        // border-color: #ffcb39
+      &.red
+        background-color: #B195A5
+        // border-color: #B195A5
+      &:before
+        content: ''
+        position: absolute
+        top: 0px
+        bottom: 0px
+        right: -1px
+        width: 1px
+        transition: .4s
+        z-index: 2
+      &.choosed,&:active
+        
+        background-color: #fff
+        &.purp
+          // border-right: 1px solid #8484BF !important
+          // background-color: #8484BF
+          color: #8b87ff
+          &:before
+            background-color: #8b87ff
+
+        &.green
+          // border-right: 1px solid #7bb31a !important
+          // background-color: #7bb31a
+          color: #7bb31a
+          &:before
+            background-color: #7bb31a
+        &.red
+          // border-right: 1px solid #7bb31a !important
+          // background-color: #7bb31a
+          color: #B195A5
+          &:before
+            background-color: #B195A5
+
+        &.blue
+          // border-right: 1px solid #72C6EF !important
+          // background-color: #72C6EF
+          color: #72C6EF
+          &:before
+            background-color: #72C6EF
+
+        &.yellow
+          // border-right: 1px solid #ffcb39 !important
+          // background-color: #ffcb39
+          color: #ffcb39
+          &:before
+            background-color: #ffcb39
+
+      &_wrap
+        display: flex
+        width: 100%
+        justify-content: center
+        margin-top: 0px
+      span
+        text-transform: none
+    &_title
+      font-weight: 600
+      font-size: 18px
+      padding: 20px 0
+      display: block
+      color: #fff
+      &--full
+        background-color: none
+        display: block
+        font-size: 20px
+      &-last
+        margin-top: 15px 
+        font-size: 24px
+        line-height: 2
+        letter-spacing: .4px
+        font-weight: 600
+        span
+          font-weight: bold
+      &_sub
+        font-size: 20px
+        margin-top: 40px
+        letter-spacing: .4px
+        font-weight: 600
+    &_wrap
+      position: relative
+      height: 100%
+    &.active
+      opacity: 1
+      z-index: 2
+    &-end
+      left: 1%
+      right: 1%
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: space-around
+      top: 0
+      bottom: 0
+  &_form
+    display: flex
+    flex-wrap: wrap
+    margin-top: 10px
+    &_wrap
+    &_col
+      box-sizing: border-box
+      width: 50%
+      padding: 10px 20px
+    &_input
+      border: 1px solid #ff9900
+      line-height: 2
+      font-size: 18px
+      width: 100%
+      padding: 0 10px
+      box-sizing: border-box
+    &_btn
+      border: 1px solid #ff9900
+      color: #fff
+      background-color: #ff9900
+      padding: 10px 40px 9px
+      letter-spacing: .3px
+      text-transform: uppercase
+      font-weight: bold
+      font-size: 18px
+      display: block
+      width: 100%
+      box-sizing: border-box
+      &_wrap
+        padding: 0 20px
+        margin-top: 2%
+        width: 100%
+        text-align: center
+
+@media (max-width: 1450px)
+
+  .si_form
+    margin-top: 21px
+  .si_modal
+    min-height: 180px
+  .si_modal_title 
+    margin: 10px 0 10px
+  .si_qu_title
+    padding: 9px 2px
+  .si_qu_ans_wrap 
+    margin-top: 10px
+  .si_qu_ans 
+    font-size: 14px
+    padding: 10px 0
+  .si_qu_btn 
+    padding: 15px 50px
+    // margin: 20px 0 10px
+  .si_qu
+    left: 0%
+    right: 0%
+  .si_form_btn_wrap 
+    margin-top: 2%
+  .si_form_col
+    padding: 5px 20px
+  .si_form_input 
+    line-height: 1.7
+    font-size: 16px
+    padding: 0 10px
+  .si_form_btn
+    padding: 7px 40px 6px
+  .si_qu_title-last
+    margin-top: 10px
+  .si_qu_title_sub
+    font-size: 18px
+    margin-top: 15px
+  .si_icon_title
+    font-size: 14px
+  .si_qu-end
+    left: 1%
+    right: 1%
+  .si_qu_title--full
+    font-size: 18px
+  .si_qu_cta_title
+    font-size: 18px
+@media (max-width: 1290px)
+  .si_form_btn_wrap
+    padding: 0 10px
+  .si_qu_title-last
+    font-size: 18px
+  .si_qu_title_sub
+    font-size: 16px
+  .si_qu_title--full
+    // margin-top: 10px
+    font-size: 16px
+  .si_qu_ans
+    width: 26%
+  .si_modal
+    padding: 10px
+    min-height: 155px
+  .si_qu_title
+    font-size: 14px
+    margin-top: 0px
+  .si_qu_ans 
+    font-size: 13px
+    padding: 6px 0
+    border-width: 1px
+  .si_qu_ans:before
+    right: -2px
+    width: 1px
+  .si_qu_ans:last-of-type
+    border-right: 1px solid #fff
+  .si_qu_btn 
+    // margin: 15px 0 5px
+    font-size: 18px
+  .si_qu_cta_title
+    font-size: 16px
+  .si_modal_title 
+    font-size: 16px
+  .si_modal_title
+    margin: 10px 0 7px
+  .si_form_col
+    padding: 5px 10px
+  .si_form
+    margin: 0 0px
+  .si_form_input
+    box-sizing: border-box
+    min-width: 0px
+  .si_form_btn_wrap
+    margin-top: 2%
+  .si_qu_ans 
+    min-width: 105px
+  .si_qu_title-last
+    margin-top: 10px
+  .si_icon_title
+    bottom: 14px
+@media (max-width: 1190px)
+
+  .si_icon_toggle
+    width: 80px
+    margin-left: -40px
+    opacity: 1
+    top: 5px
+    font-size: 14px
+    line-height: 20px
+    height: 20px
+  .si_qu_title
+    margin-top: 0px
+  .si_qu_cta_title
+    // margin-top: 14px
+    font-size: 14px
+  .si_qu_btn
+    padding: 11px 50px
+  .si_qu
+    transition: 0s
+    &-end
+      position: relative
+  .si_qu_ans_wrap
+    padding-bottom: 2px
+  .si_qu_cta_title
+    margin-top: 18px
+  .si_icon_title
+    bottom: 4px
+    font-size: 12px
+  .si_qu_ans
+    width: 50%
+    box-sizing: border-box
+    border: 1px solid #fff!important
+    
+  .si_icon
+    order: 40
+    &.active
+      order: 1
+  .si_icons
+    margin-top: 20px
+  .si_icon
+    width: 33.33333%
+    &--empty
+      width: 0px
+      display: none
+  .si_modal
+    position: relative
+    top: 0
+    right: 0
+    left: 0
+    margin: 0 auto
+    width: 79%
+    transform: translateY(0%)
+  .si_frame
+    flex-direction: column
+  .si_qu-end.active
+    left: -5px
+    right: -5px
+    position: relative
+  .si_qu_btn
+    margin: 16px 0 18px
+    font-size: 18px
+    padding: 9px 50px
+@media (max-width: 992px)
+  .si_qu-end.active
+    left: -5px
+    right: -5px
+    position: relative
+  .si_qu_btn
+    margin: 16px 0 18px
+    font-size: 18px
+    padding: 9px 50px
+@media (max-width: 820px)
+  .container
+    margin: 0 5%
+  .si_qu
+    transition: 0s
+  .si_qu_ans_wrap
+    padding-bottom: 2px
+  .si_qu_cta_title
+    margin-top: 18px
+  .si_icon_title
+    bottom: 4px
+    font-size: 12px
+  .si_qu_ans
+    width: 50%
+    box-sizing: border-box
+    border: 1px solid #fff!important
+  .si_icon
+    order: 20
+    &.active
+      order: 1
+  .si_icons
+    margin-top: 20px
+  .si_icon
+    width: 33.33333%
+    &--empty
+      width: 0px
+      display: none
+  .si_modal
+    position: relative
+    top: 0
+    right: 0
+    left: 0
+    margin: 0 auto
+    width: 79%
+    transform: translateY(0%)
+  .si_frame
+    flex-direction: column
+@media (max-width: 670px)
+  .container
+    margin: 0 1%
+  .si_qu_cta_title
+    margin-top: 5px
+  .si_qu
+    left: 0%
+    right: 0%
+  .si_title
+    font-size: 18px
+    letter-spacing: .7px
+  .si_wrap
+    padding: 20px 0
+  .si_modal
+    min-height: initial
+    padding: 15px
+    width: 90%
+  .si_qu_btn 
+    padding: 10px 15px
+    margin: 20px 0 20px
+    font-size: 16px
+  .si_qu
+    max-height: 0
+    position: relative
+    overflow: hidden
+    &.active
+      max-height: 300px
+
+  .si_qu_ans
+    margin-bottom: -1px
+    position: relative
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      top: -1px
+      border-top: 1px solid
+    &:nth-child(1), &:nth-child(2)
+      &:after
+        display: none
+    
+    &:nth-child(2n)
+      &:before
+        display: none
+  .si_qu_title-last
+    line-height: 1.2
+
+  .si_qu_ans_wrap
+    flex-wrap: wrap
+    margin-top: 15px
+  .si_form_col
+    padding: 5px 10px
+    width: 100%
+  .si_qu_title
+    font-size: 16px
+  .si_icon
+    width: 50%

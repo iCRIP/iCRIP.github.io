@@ -1,0 +1,47 @@
+@import '_deps';
+body {
+  font-family: 'American Captain';
+  margin: 0;
+  padding: 0;
+
+}
+*{
+  box-sizing: border-box;
+  &:before,&:after{
+    box-sizing: border-box;
+  }
+}
+.scene{
+  max-height: 100vh;
+  max-width: 100%;
+  min-height: 750px;
+  height: 100vh;
+  position: relative;
+  background-image: url('assets/media/images/shared/bg.png');
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.container{
+  width: 1166px;
+  padding: 0 15px;
+  margin: 0 auto;
+  &--relative{
+    position: relative;
+  }
+}
+// responsive
+@media all and (max-width: 1170px){
+  .container{
+    width: 100%;
+  }
+}
+// hacks
+@media all and (-ms-high-contrast:none){
+  .scene{
+    height: 100vh;
+  }
+}
